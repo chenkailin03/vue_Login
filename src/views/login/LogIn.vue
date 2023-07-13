@@ -5,7 +5,7 @@
 				<div class="big-contain" key="bigContainLogin" v-if="isLogin">
 					<div class="btitle">账户登录</div>
 					<div class="bform">
-						<input type="email" placeholder="昵称" v-model="form.useremail">
+						<input type="text" placeholder="昵称" v-model="form.username">
 						<span class="errTips" v-if="emailError">* 昵称填写错误 *</span>
 						<input type="password" placeholder="密码" v-model="form.userpwd">
 						<span class="errTips" v-if="passwordError">* 密码填写错误 *</span>
@@ -41,7 +41,7 @@
 
 <script>
 import axios from 'axios'
-
+	
 	export default{
 		name:'login-register',
 		data(){
@@ -65,29 +65,29 @@ import axios from 'axios'
 				this.form.userpwd = ''
 			},
 			login() {
+				this.emailError=false;
+				this.passwordError=false;
 				const self = this;
-				if (self.form.useremail != "" && self.form.userpwd != "") {
-          axios.post('/user',{
-          url:'http://47.98.252.41/Users/Administrator/Desktop/user',
-          data:{
-            names:self.from.username,
+				if (self.form.username != "" && self.form.userpwd != "") {
+          axios.post('http://127.0.0.1:8000/login/',JSON.stringify({
+            names:self.form.username,
             password:self.form.userpwd
-          }
-        })
-					.then( res => {
-						switch(res.data){
-							case 0: 
-								alert("登陆成功！");
-								break;
-							case -1:
-								this.emailError = true;
-								break;
-							case 1:
-								this.passwordError = true;
-								break;
-						}
-					})
-					.catch( err => {
+          })
+        )
+		.then( res => {
+			switch(res.data.flag){
+				case 0: 
+				alert("登录成功");
+				break;
+				case -1:
+				this.emailError = true;
+				break;
+				case 1:
+				console.log(res.data)
+				this.passwordError = true;
+				break;
+				}
+				}).catch( err => {
 						console.log(err);
 					})
 				} else{
@@ -99,7 +99,7 @@ import axios from 'axios'
 				if(self.form.username != "" && self.form.useremail != "" && self.form.userpwd != ""){
 					self.$axios({
 						method:'post',
-						url: 'http://47.98.252.41/Users/Administrator/Desktop/userAdd',
+						url: 'http://127.0.0.1:8000/register/',
 						data: {
 							username: self.form.username,
 							email: self.form.useremail,
@@ -107,7 +107,7 @@ import axios from 'axios'
 						}
 					})
 					.then( res => {
-						switch(res.data){
+						switch(res.data.flag){
 							case 0:
 								alert("注册成功！");
 								this.login();
@@ -126,6 +126,9 @@ import axios from 'axios'
 			}
 		}
 	}
+
+
+
 </script>
 
 <style scoped="scoped">
