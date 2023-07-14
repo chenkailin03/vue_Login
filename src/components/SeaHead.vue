@@ -10,8 +10,8 @@
       style="background-color: rgb(194, 229, 246);"
     >
     <img class="scroll" alt="logo" src="../components/logo.png" > 
-    <el-menu-item v-bind:disabled="is" style="font-size: 200%;" >SeaWorld</el-menu-item>
-    <img alt="logo" src="../components/logo.png" style="height: 60px;opacity: 1;" >
+    <el-menu-item v-bind:disabled="is" style="font-size: 200%;margin-left: 5%;" >SeaWorld</el-menu-item>
+    <img alt="logo" src="../components/logo.png" style="height: 60px;opacity: 1;position: fixed;" >
       <div class="flex-grow" />
       <el-sub-menu index="1">
         <template #title>首页</template>
@@ -34,7 +34,7 @@
         <template #title>海洋乐园</template>
         <el-menu-item index="/seamusic" >海洋之声</el-menu-item>
         <el-menu-item index="/question">答题挑战</el-menu-item>
-        <el-menu-item index="4-3">小游戏</el-menu-item>
+        <el-menu-item index="/game">小游戏</el-menu-item>
       </el-sub-menu>
       <div class="flex-grow1" />
       <el-menu-item index="/login" >个人中心</el-menu-item>

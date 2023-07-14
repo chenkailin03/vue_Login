@@ -3,6 +3,7 @@ import HomeView from '../views/home/HomeView.vue'
 import Login from '../views/login/LogIn.vue'
 import SeaMusic from '../views/disney/SeaMusic.vue'
 import Question from '../views/disney/Question.vue'
+import Game from '../views/disney/Game.vue'
 
 
 
@@ -35,6 +36,11 @@ const routes = [
     path: '/question',
     name: 'question',
     component: Question 
+  },
+  {
+    path: '/game',
+    name: 'game',
+    component: Game 
   }
 ]
 

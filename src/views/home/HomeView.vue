@@ -21,7 +21,7 @@ import placeComponent from "@/components/placeComponent.vue"
 export default {
   data() {
     return {
-      showtype: "picCom",
+      showtype: "picComponent",
       buttonheight: "50px"
     }
   },

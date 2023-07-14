@@ -27,8 +27,12 @@
     "@vue/cli-plugin-pwa": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
+    "dart-sass": "^1.25.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
+    "node-sass": "npm:dart-sass@^1.25.0",
+    "node-sass-install": "^1.0.2",
+    "sass-loader": "^13.3.2",
     "webpack": "^5.42.1",
     "webpack-cli": "^4.10.0"
   }
