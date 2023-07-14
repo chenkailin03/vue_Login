@@ -5,7 +5,6 @@
       <h2>{{ musicName }}</h2>
       <audio
         ref="Ref_audioPlayer"
-        controls
         :src="audioPathDic[musicName]"
         @ended="overAudio"
         @pause="onPause"
@@ -29,20 +28,20 @@
             :marks="marks"
             :show-tooltip="false"
           >
-          </el-slider>
-          <div class="controlBox">
-            <i @click="move(-5)" class="el-icon-d-arrow-left"></i>
-            <i
-              type="primary"
-              v-if="playstatus"
-              @click="pause"
-              class="el-icon-video-pause"
-            ></i>
-            <i type="primary" v-else @click="play" class="el-icon-video-play"></i>
-            <i @click="replay" class="el-icon-refresh-left"></i>
-            <i @click="move(5)" class="el-icon-d-arrow-right"></i>
-          </div>
+        </el-slider>
+        <div class="controlBox">
+          <el-icon @click="move(-5)" class="el-icon-d-arrow-left"><DArrowLeft /></el-icon>
+          <el-icon
+            type="primary"
+            v-if="playstatus"
+            @click="pause"
+            class="el-icon-video-pause"
+          ><VideoPause /></el-icon>
+          <el-icon type="primary" v-else @click="play" class="el-icon-video-play"><VideoPlay /></el-icon>
+          <el-icon @click="replay" class="el-icon-refresh-left"><RefreshLeft /></el-icon>
+          <el-icon @click="move(5)" class="el-icon-d-arrow-right"><DArrowRight /></el-icon>
         </div>
+      </div>
         <h3 class="subTitle">播放列表</h3>
         <ul>
           <li
@@ -56,13 +55,13 @@
         </ul>
         <h3 class="subTitle">获取信息</h3>
         <div class="btnBox">
-          <el-button @click="getLength" type="primary" size="small"
+          <el-button @click="getLength" type="primary" size="small" plain
             >获取时长</el-button
           >
-          <el-button @click="getCurrentTime" type="primary" size="small"
+          <el-button @click="getCurrentTime" type="primary" size="small" plain
             >获取播放进度</el-button
           >
-          <el-button @click="getPlayStatus" type="primary" size="small"
+          <el-button @click="getPlayStatus" type="primary" size="small" plain
             >获取播放状态</el-button
           >
         </div>
@@ -230,9 +229,9 @@
   .container /deep/ {
     text-align: center;
     max-width: 460px;
-    margin-top: -655px;
+    margin-top: -650px;
     margin-left: 490px;
-    background-color: aliceblue;
+    background: linear-gradient(rgb(215, 231, 250), rgb(224, 247, 199));
   }
   .listBox {
     text-align: left;

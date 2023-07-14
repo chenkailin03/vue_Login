@@ -11,7 +11,7 @@
     >
     <img class="scroll" alt="logo" src="../components/logo.png" > 
     <el-menu-item v-bind:disabled="is" style="font-size: 200%;" >SeaWorld</el-menu-item>
-    <img alt="logo" src="../components/logo.png" style="height: 60px;opacity: 0.5;" >
+    <img alt="logo" src="../components/logo.png" style="height: 60px;opacity: 1;" >
       <div class="flex-grow" />
       <el-menu-item index="/home" >海洋风景</el-menu-item>
       <el-sub-menu index="3">
