@@ -15,6 +15,8 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     // 关闭名称校验
      'vue/multi-word-component-names': 'off',
+     //关闭混合空格和制表符
+     "no-mixed-spaces-and-tabs": 'off',
      //关闭标签闭合
      'vue/no-parsing-error': [2, { 'x-invalid-end-tag': false }] 
   }
