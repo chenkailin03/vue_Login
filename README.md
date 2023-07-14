@@ -1,4 +1,4 @@
-# vue05
+# Vue05
 
 ## Project setup
 ```

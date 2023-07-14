@@ -12,7 +12,7 @@
   export default {
    components:{
     SeaHead,
-    SeaFooter
+    SeaFooter,
    }
   }
 </script>

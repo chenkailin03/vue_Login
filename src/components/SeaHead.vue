@@ -13,7 +13,11 @@
     <el-menu-item v-bind:disabled="is" style="font-size: 200%;" >SeaWorld</el-menu-item>
     <img alt="logo" src="../components/logo.png" style="height: 60px;opacity: 1;" >
       <div class="flex-grow" />
-      <el-menu-item index="/home" >海洋风景</el-menu-item>
+      <el-sub-menu index="1">
+        <template #title>首页</template>
+        <el-menu-item index="/home">图片和纪录片</el-menu-item>
+        <el-menu-item index="3-2">景点推荐</el-menu-item>
+      </el-sub-menu>
       <el-sub-menu index="3">
         <template #title>海洋知识</template>
         <el-menu-item index="3-1">海洋笔记</el-menu-item>
