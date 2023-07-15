@@ -20,7 +20,7 @@
       </el-sub-menu>
       <el-sub-menu index="3">
         <template #title>海洋知识</template>
-        <el-menu-item index="3-1">海洋笔记</el-menu-item>
+        <el-menu-item index="/OceanRecord">海洋笔记</el-menu-item>
         <el-menu-item index="3-2">海洋书籍</el-menu-item>
         <!-- 这里的分类只是示例 -->
         <el-sub-menu index="3-3">

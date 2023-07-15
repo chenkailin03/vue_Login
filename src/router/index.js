@@ -41,7 +41,18 @@ const routes = [
     path: '/game',
     name: 'game',
     component: Game 
-  }
+  },
+  {
+    path: '/OceanRecord',
+    name: 'OceanRecord',
+    component: () => import('../views/Record/OceanRecord.vue'),
+    children:[{
+      path: '/Record/AddRecd.vue',
+      name: 'AddRecd',
+      component: () => import('../views/Record/AddRecd.vue')
+    }
+  ]
+  },
 ]
 
 const router = createRouter({
